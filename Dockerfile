@@ -1,8 +1,9 @@
 FROM ruby:2.3
 
 ADD ./Gemfile /Gemfile
+RUN cd / && bundle install
 
-WORKDIR /
-RUN ls -l
+ENV JEKYLL_ENV production
+WORKDIR /jekyll
 
-RUN bundle install
+CMD ["jekyll", "build"]
