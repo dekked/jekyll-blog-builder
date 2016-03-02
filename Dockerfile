@@ -8,6 +8,7 @@ ADD ./Gemfile /Gemfile
 RUN cd / && bundle install
 
 ADD ./build.sh /
+
 ENV JEKYLL_ENV production
 
 CMD ["/build.sh"]
